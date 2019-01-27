@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-const TASKS = [''];
+// const TASKS = [''];
 
 class App extends React.Component {
 
@@ -11,35 +11,30 @@ class App extends React.Component {
 
   constructor(props){
     super(props)
-    this.state={items: TASKS};
+    this.state={items: ''};
 
     this.handleChange = this.handleChange.bind(this);
-    this.handSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 handleChange(event) {
-  this.setState({value: event.target.value});
+    this.setState({value: event.target.value});
 }
 
 handleSubmit(event) {
-TASKS.push(this.state.value);
-event.preventDefault();
+  alert(this.state.value);
+  event.preventDefault();
 }
 
 // meant to iterate through each items in the list array and return the list elements.
 
-listBuilder(){
-  for (let listItems of this.state.items){
-    return <li> {this.state.items[listItems]} </li>
-  }
-}
 
   render() {
     return ( <div className = "main-container">
-        <input type="text" value={this.state.value} onChange={this.handleChange}></input>
-        <input type="submit" onClick={this.handleSubmit}></input>
+        <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        <input type="submit" value='Submit'/>
         <ul>
-          <listBuilder />
+
         </ul>
 
       </div>
