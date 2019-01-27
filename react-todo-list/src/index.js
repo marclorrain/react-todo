@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
+const TASKS = [''];
+
 class App extends React.Component {
 
   // setting up the state to an array to store each new tasks
 
   constructor(props){
     super(props)
-    this.state={items: ['']};
+    this.state={items: TASKS};
 
     this.handleChange = this.handleChange.bind(this);
     this.handSubmit = this.handleSubmit.bind(this);
@@ -20,7 +22,7 @@ handleChange(event) {
 }
 
 handleSubmit(event) {
-this.state.items.push(this.state.value);
+TASKS.push(this.state.value);
 event.preventDefault();
 }
 
