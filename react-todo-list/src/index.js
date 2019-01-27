@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-// const TASKS = [''];
+const TASKS = [''];
 
 class App extends React.Component {
 
@@ -11,7 +11,7 @@ class App extends React.Component {
 
   constructor(props){
     super(props)
-    this.state={items: ''};
+    this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +22,7 @@ handleChange(event) {
 }
 
 handleSubmit(event) {
-  alert(this.state.value);
+  TASKS.push(this.state.value);
   event.preventDefault();
 }
 
@@ -31,12 +31,12 @@ handleSubmit(event) {
 
   render() {
     return ( <div className = "main-container">
-        <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        <input type="submit" value='Submit'/>
+    <form onSubmit={this.handleSubmit}>
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <input type="submit" value='Submit' />
+        </form>
         <ul>
-
         </ul>
-
       </div>
     );
   }
