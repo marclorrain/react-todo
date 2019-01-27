@@ -5,6 +5,8 @@ import './index.css';
 
 class App extends React.Component {
 
+  // setting up the state to an array to store each new tasks
+
   constructor(props){
     super(props)
     this.state={items: ['']};
@@ -21,6 +23,8 @@ handleSubmit(event) {
 this.state.items.push(this.state.value);
 event.preventDefault();
 }
+
+// meant to iterate through each items in the list array and return the list elements.
 
 listBuilder(){
   for (let listItems of this.state.items){
