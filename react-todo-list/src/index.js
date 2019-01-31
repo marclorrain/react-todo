@@ -40,10 +40,11 @@ return {
     <form onSubmit={this.handleSubmit}>
         <input type="text" value={this.state.value} onChange={this.handleChange} />
         <input type="submit" value='Submit' />
+        <input type="button" value="clear"/>
         </form>
         <ul>
           {this.state.list.map((task) =>
-            <li key={task}>{task}</li>)}
+            <li key={task}><input type='checkbox'/>{task}</li>)}
         </ul>
       </div>
     );
